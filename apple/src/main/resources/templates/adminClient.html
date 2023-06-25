@@ -1,0 +1,79 @@
+<!--
+  创建时间:21:03
+  目录路径：apple/src/main/resources/templates
+  项目名称：springboot
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>管理员首页</title>
+    <link rel="stylesheet" th:href="@{/css/main0.css}">
+</head>
+<body>
+
+<div id="header">
+    <div id="return">
+        <a th:href="@{/admin/index}"><img th:src="@{/img/return.png}" th:alt="返回" th:height="30" th:width="30"/></a>
+    </div>
+    <p style="text-align: center">金融管理系统（管理员）</p>
+</div>
+
+<div id="nav">
+
+    <li><a th:href="@{/admin/fund}">产品管理</a></li>
+    <li><a th:href="@{/admin/client}">客户管理</a></li>
+
+</div>
+
+
+<div id="section">
+    <li><a th:href="@{/admin/addClient}">添加用户</a></li>
+    <table>
+    <tr>
+        <td>身份证号</td>
+        <td>名称</td>
+        <td>账号</td>
+        <td>电子邮箱</td>
+        <td>电话号码</td>
+        <td>性别</td>
+    </tr>
+    <tr th:each="client:${clientList}">
+        <td th:text="${client.id}"></td>
+        <td th:text="${client.name}"></td>
+        <td th:text="${client.account}"></td>
+        <td th:text="${client.email}"></td>
+        <td th:text="${client.phone}"></td>
+        <td th:text="${client.sex}"></td>
+        <td>
+            <a @click="deleteClient()" th:href="@{'/admin/deleteclient/'+${client.id}}" >删除</a>
+            <a  th:href="@{'/admin/updateclient/'+${client.id}}">更新</a>
+        </td>
+    </tr>
+    <br/>
+</table>
+    <form id="deleteform" > </form>
+
+</div>
+<script type="text/javascript" th:src="@{/static/js/vue.js}"></script>
+<script type="text/javascript">
+    var vue = new Vue({
+        el:"#section",
+        methods:{
+            deleteClient(){
+                //获取form表单
+                var form = document.getElementById("deleteform");
+                form.action = event.target.href;
+                form.submit();
+                //阻止超链接的默认行为
+                event.preventDefault();
+            }
+        }
+    });
+</script>
+<div id="footer">
+    We'll find a way; we always have.
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!--
+  创建时间:15:18
+  目录路径：thymeleaf/src/main/resources/templates
+  项目名称：springboot
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf'Index</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>password</td>
+        </tr>
+        <tr th:each="stu:${studentList}">
+            <td th:text="${stu.id}"></td>
+            <td th:text="${stu.name}"></td>
+            <td th:text="${stu.password}"></td>
+        </tr>
+    </table>
+<p> red red </p>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!--
+  创建时间:12:40
+  目录路径：apple/src/main/resources/templates
+  项目名称：springboot
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>我的资产</title>
+    <link rel="stylesheet" th:href="@{/css/main0.css}">
+</head>
+<body>
+<div id="header">
+    <div id="return">
+        <a th:href="@{/client/index}"><img th:src="@{/img/return.png}" th:alt="返回" th:height="30" th:width="30"></a>
+    </div>
+    <p style="text-align: center">金融管理系统</p>
+</div>
+<div id="nav">
+    <li><a th:href="@{/client/index}">我的储蓄卡</a></li>
+    <li><a th:href="@{/client/index}">我的信用卡</a> </li>
+    <li><a th:href="@{/client/property/fund}">我的基金</a> </li>
+    <li><a th:href="@{/client/index}">我的保险</a> </li>
+</div>
+<div id="section">
+我的储蓄卡，我的信用卡，我的保险功能正在开发
+</div>
+<div id="footer">
+    We'll find a way; we always have.
+</div>
+</body>
+</html>

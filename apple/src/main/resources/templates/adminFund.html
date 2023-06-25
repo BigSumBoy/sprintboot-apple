@@ -1,0 +1,82 @@
+<!--
+  创建时间:20:12
+  目录路径：apple/src/main/resources/templates
+  项目名称：springboot
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理基金</title>
+    <link rel="stylesheet" th:href="@{/css/main0.css}">
+</head>
+<body>
+<div id="header">
+    <div id="return">
+        <a th:href="@{/admin/index}"><img th:src="@{/img/return.png}" th:alt="返回" th:height="30" th:width="30"></a>
+    </div>
+    <p style="text-align: center">金融管理系统（管理员）</p>
+</div>
+<div id="nav">
+
+    <li><a th:href="@{/admin/fund}" >产品管理</a></li>
+    <li><a th:href="@{/admin/client}" >客户管理</a></li>
+
+</div>
+
+<div id="section">
+    <li><a th:href="@{/admin/addFund}">添加基金</a></li>
+    <table>
+        <tr>
+            <td>基金编号</td>
+            <td>基金名称</td>
+            <td>描述信息</td>
+            <td>管理者</td>
+            <td>基金评级</td>
+            <td>单份价格</td>
+            <td>基金状态</td>
+        </tr>
+        <tr th:each="fund:${fundList}">
+            <td th:text="${fund.fid}"></td>
+            <td th:text="${fund.name}"></td>
+            <td th:text="${fund.description}"></td>
+            <td th:text="${fund.manager}"></td>
+            <td th:text="${fund.level}"></td>
+            <td th:text="${fund.price}"></td>
+            <td th:text="${fund.state}"></td>
+            <td>
+                <a @click="deleteFund()" th:href="@{'/admin/deletefund/'+${fund.fid}}" >删除</a>
+                <a  th:href="@{'/admin/updatefund/'+${fund.fid}}">更新</a>
+            </td>
+        </tr>
+        <br/>
+    </table>
+    <form id="deleteform" >
+    </form>
+
+</div>
+<script type="text/javascript" th:src="@{/static/js/vue.js}"></script>
+<script type="text/javascript">
+    var vue = new Vue({
+        el:"#section",
+        methods:{
+            deleteFund(){
+                //获取form表单
+                var form = document.getElementById("deleteform");
+                //将超链接的href属性值赋值给form表单的action属性
+                //event.target表示当前触发事件的标签
+                form.action = event.target.href;
+                //表单提交
+                form.submit();
+                //阻止超链接的默认行为
+                event.preventDefault();
+            }
+        }
+    });
+</script>
+<div id="footer">
+    We'll find a way; we always have.
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!--
+  创建时间:22:11
+  目录路径：apple/src/main/resources/templates
+  项目名称：springboot
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>更新基金</title>
+    <link rel="stylesheet" th:href="@{/css/main0.css}">
+</head>
+<body>
+<div id="header">
+    <div id="return">
+        <a th:href="@{/admin/fund}"><img th:src="@{/img/return.png}" th:alt="返回" th:height="30"
+                                           th:width="30"/></a>
+    </div>
+    <p style="text-align: center">可每银行网上系统（管理员）</p>
+</div>
+<div id="nav">
+    <li><a href="@{/admin/fund}">产品管理</a></li>
+    <li><a href="@{/admin/client}">客户管理</a></li>
+</div>
+<div id="section">
+<form th:action="@{/admin/fund/update}" method="post">
+    <table>
+        <tr>
+            <td>基金编号</td>
+            <td >
+                <input type="text" name = "fid" th:value="${updatedFund.fid}">
+            </td>
+        <tr/>
+
+        <tr>
+            <td>基金名称</td>
+            <td>
+                <input type="text" name="name" th:value="${updatedFund.name}">
+            </td>
+        </tr>
+
+        <tr>
+            <td>描述信息</td>
+            <td>
+                <input type="text" name="description" th:value="${updatedFund.description}">
+            </td>
+        </tr>
+
+        <tr>
+            <td>管理者</td>
+            <td>
+                <input type="text" name="manager" th:value="${updatedFund.manager}">
+            </td>
+        </tr>
+
+        <tr>
+            <td>基金等级</td>
+            <td>
+                <input type="text" name="level" th:value="${updatedFund.level}">
+            </td>
+        </tr>
+        <tr>
+            <td>单份价格</td>
+            <td>
+                <input type="text" name="price" th:value="${updatedFund.price}">
+            </td>
+        </tr>
+        <tr>
+            <td>基金状态</td>
+            <input type="radio" name="state" value="上线" th:field="${updatedFund.state}">上线
+            <input type="radio" name="state" value="下线" th:field="${updatedFund.state}">下线
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="更新">
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+<div id="footer">
+    We'll find a way; we always have.
+</div>
+</body>
+</html>

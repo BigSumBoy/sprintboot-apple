@@ -1,0 +1,87 @@
+<!--
+  创建时间:8:37
+  目录路径：apple/src/main/resources/templates
+  项目名称：springboot
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>更新用户</title>
+    <link rel="stylesheet" th:href="@{/css/main0.css}">
+</head>
+<body>
+<div id="header">
+    <div id="return">
+        <a th:href="@{/admin/client}"><img th:src="@{/img/return.png}" th:alt="返回" th:height="30"
+                                           th:width="30"/></a>
+    </div>
+    <p style="text-align: center">可每银行网上系统（管理员）</p>
+</div>
+<div id="nav">
+    <li><a href="@{/admin/fund}">产品管理</a></li>
+    <li><a href="@{/admin/client}">客户管理</a></li>
+</div>
+
+<div id="section">
+    <form th:action="@{/admin/client/update}" method="post">
+        <table>
+            <tr>
+                <td>id</td>
+                <td>
+                    <input type="text" name="id" th:value="${updatedClient.id}">
+                </td>
+            <tr/>
+
+            <tr>
+                <td>name</td>
+                <td>
+                    <input type="text" name="name" th:value="${updatedClient.name}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>account</td>
+                <td>
+                    <input type="text" name="account" th:value="${updatedClient.account}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>email</td>
+                <td>
+                    <input type="eamil" name="email" th:value="${updatedClient.email}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>phone</td>
+                <td>
+                    <input type="text" name="phone" th:value="${updatedClient.phone}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>sex</td>
+                <td>
+                    <input id= "sexchoice1" type="radio" name="sex" value="男" th:checked="${updatedClient.sex} == '男'">
+                    <label for="sexchoice1">男</label>
+                    <input id="sexchoice2" type="radio" name="sex" value="女" th:checked="${updatedClient.sex}  == '女'">
+                    <label for="sexchoice2">女</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="更新">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div id="footer">
+    We'll find a way; we always have.
+</div>
+</body>
+</html>

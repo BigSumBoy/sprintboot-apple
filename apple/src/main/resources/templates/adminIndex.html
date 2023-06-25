@@ -1,0 +1,38 @@
+<!--
+  创建时间:7:51
+  目录路径：apple/src/main/resources/templates
+  项目名称：springboot
+  描述：管理员首界面
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员首页</title>
+    <link rel="stylesheet" th:href="@{/css/main0.css}" type="text/css">
+
+</head>
+<body>
+<div id="header">
+    <p style="text-align: center">金融管理系统（管理员）</p>
+</div>
+
+<div id="nav">
+
+    <li><a th:href="@{/admin/fund}" >产品管理</a></li>
+    <li><a th:href="@{/admin/client}" >客户管理</a></li>
+
+</div>
+
+<div id="section">
+    欢迎使用金融管理系统
+</div>
+
+<div id="footer">
+    We'll find a way; we always have.
+</div>
+
+</body>
+</body>
+</html>

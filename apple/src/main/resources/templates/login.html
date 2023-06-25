@@ -1,0 +1,53 @@
+<!--
+  创建时间:9:59
+  目录路径：apple/src/main/resources/templates
+  项目名称：springboot
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}" type="text/css">
+</head>
+<body>
+<script>
+    const msg = getSessionValue('msg');
+    console.log(msg);
+    function getSessionValue(key) {
+        const cookieString = document.cookie;
+        const cookieArr = cookieString.split('; ');
+
+        for (let i = 0; i < cookieArr.length; i++) {
+            const cookie = cookieArr[i].split('=');
+            if (cookie[0] === key) {
+                return cookie[1];
+            }
+        }
+        return null;
+    }
+</script>
+<p>
+    <img th:src="@{/img/login.png}">
+</p>
+<form th:action="@{/verify}" autocomplete="on" th:method="POST">
+    <table>
+        <tr>
+            <td>账号:</td>
+            <td>
+                <input type="text" name="account">
+            </td>
+        </tr>
+        <tr>
+            <td>密码:</td>
+            <td>
+                <input type="password" name="password">
+            </td>
+        </tr>
+    </table>
+    <input type="submit" th:value="登陆"><br>
+</form>
+
+</body>
+</html>

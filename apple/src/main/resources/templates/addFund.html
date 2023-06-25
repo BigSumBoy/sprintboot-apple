@@ -1,0 +1,52 @@
+<!--
+  创建时间:20:26
+  目录路径：apple/src/main/resources/templates
+  项目名称：springboot
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>添加基金</title>
+    <link rel="stylesheet" th:href="@{/css/main0.css}">
+</head>
+<body>
+<div id="header">
+    <div id="return">
+        <a th:href="@{/admin/fund}"><img th:src="@{/img/return.png}" th:alt="返回" th:height="30" th:width="30"></a>
+    </div>
+    <p style="text-align: center">金融管理系统（管理员）</p>
+</div>
+<div id="nav">
+
+    <li><a th:href="@{/admin/fund}" >产品管理</a></li>
+    <li><a th:href="@{/admin/client}" >客户管理</a></li>
+
+</div>
+<div id="section">
+
+    <form th:action="@{/admin/fund/add}" method="post">
+        <table>
+            <tr>
+                <td th:va></td>
+            </tr>
+        </table>
+        基金编号:<input type="text" name="fid"><br/>
+        基金名称:<input type="text" name="name"><br/>
+        描述信息:<input type="text" name="description"><br/>
+        管理者:<input type="text" name="manager"><br/>
+        基金评级:<input type="text" name="level"><br/>
+        单份价格:<input type="text" name="price"><br/>
+        基金状态:<input type="radio" name="state" value="上线">上线
+        <input type="radio" name="sex" value="下线">下线
+    <br/>
+    <input type="submit" value="添加"><br>
+    </form>
+</div>
+<div id="footer">
+    We'll find a way; we always have.
+</div>
+</body>
+
+</html>

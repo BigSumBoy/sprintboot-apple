@@ -1,0 +1,84 @@
+body{
+  background-color: #cccccc;
+}
+
+/*头部块样式格式*/
+#header {
+  background-color: #b3d4fc;
+  color:white;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15%;
+  width: 100%;
+}
+/*头部块子块--返回块样式格式*/
+#header #return{
+  float: left;
+  background-color: #b3d4fc;
+  color:white;
+  text-align: center;
+  width: 60px;
+  height: 55px;
+}
+
+/*导航块样式格式*/
+#nav {
+  line-height:30px;
+  background-color:#f1f1f1;
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  width:10%;
+  height: 80%;
+  position: absolute;
+  top: 15%;
+  left: 0;
+}
+
+/*主体样式格式*/
+#section {
+  background-color: #f0e4a0;
+  width:90%;
+  float:left;
+  padding:10px;
+  height: 80%;
+  position: absolute;
+  top: 15%;
+  left: 10%;
+}
+
+/*底部样式格式*/
+#footer {
+  background-color:black;
+  color:white;
+  clear:both;
+  text-align:center;
+  width: 100%;
+  height: 5%;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+}
+
+/*导航栏样式设置*/
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}

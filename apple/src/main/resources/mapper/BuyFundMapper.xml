@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.apple.mapper.BuyFundMapper">
+    
+    <select id="getClientProperty"
+            resultType="com.example.apple.model.view.ClientFundView">
+        select bf.bfid as bfid, bf.fid as fid, f.name as name,bf.ptime as ptime,bf.pnum as pnum
+        from buy_fund as bf,fund as f
+        where bf.id = #{id} and bf.fid = f.fid
+    </select>
+</mapper>

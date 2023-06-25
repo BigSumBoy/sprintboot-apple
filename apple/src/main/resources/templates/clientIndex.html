@@ -1,0 +1,36 @@
+<!--
+  创建时间:10:37
+  目录路径：apple/src/main/resources/templates
+  项目名称：springboot
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户首页</title>
+    <link rel="stylesheet" th:href="@{/css/main0.css}">
+</head>
+<body>
+<div>
+    <div id="header">金融管理系统</div>
+</div>
+<div id="nav">
+    <form>
+        <li>
+            <a th:href="@{/client/property}" >我的资产</a>
+        </li>
+        <li>
+            <a th:href="@{/client/buy}">购买产品</a>
+        </li>
+    </form>
+</div>
+<div id="section">
+    这里是用户首页
+</div>
+
+<div id="footer">
+    We'll find a way; we always have.
+</div>
+</body>
+</html>
